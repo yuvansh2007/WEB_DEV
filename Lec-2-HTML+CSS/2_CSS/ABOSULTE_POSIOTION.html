@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABSOLUTE POSITION</title>
+</head>
+<style>
+    div{
+        border: solid 2px black;
+        background-color: aqua;
+    }
+    #absolute-position1{
+        position: absolute;
+        top: 40px;
+        left: 30px;
+        background-color: chocolate;
+    }
+</style>
+<body>
+    <div> DIV 1</div>
+    <!-- GIVES UP ITS SPACE -->
+    <div id="absolute-position1"> DIV 2</div>
+
+    <div> DIV 3</div>
+
+    <div>
+        Grand Parent
+        <div>
+            Parent
+            <div>
+                Child/Current
+            </div>
+        </div>
+    </div>
+</body>
+</html>

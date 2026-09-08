@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Measurements</title>
+</head>
+<style>
+    #div-parent{
+        font-size: 20px;
+    }
+    .div-child{
+        font-size: 1.5em;
+    }
+</style>
+<body>
+    <h1> This is EM</h1>
+    <div id="div-parent">
+        this is a div with size 10px
+        <div class="div-child">
+            this is a child div with size relative to parent div size * em
+            <div class="div-child">
+                this is also a div child which is relative to the size of its nearest parent
+            </div>
+        </div>
+    </div>
+</body>
+</html>

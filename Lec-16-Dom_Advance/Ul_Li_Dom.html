@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UL and LI</title>
+</head>
+<body>
+    <div>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+    </div>
+</body>
+<script>
+    const listelement = document.querySelectorAll("li");
+    const newLiitem = document.createElement("li");
+    newLiitem.textContent = 5;
+    const ParentUl = document.querySelector("ul");
+    ParentUl.appendChild(newLiitem);
+    // this is a bad way to add event listeners
+    // 1 it will create n no. of listeners which is not optimised
+    // 2 adding new items is a nightmare and disturbs the readability and maintainability
+
+    // Event Propogation || event bubbling
+
+    ParentUl.addEventListener("click",(event) =>{
+        console.log("Li item clicked --->",event.target.textContent);
+        console.log(event.currentTarget,"the parent with event listener"); // parent on which event listener is applied
+    })
+    const newLi = document.createElement("li");
+    newLi.textContent = 6;
+    ParentUl.appendChild(newLi);
+
+    const btn = document.createElement('button');
+    btn.textContent = 'reset';
+    ParentUl.appendChild(btn);
+    btn.addEventListener('click',(event)=>{
+        console.log("reset everything i am clicked");
+        event.stopPropagation();
+    })
+</script>
+</html>
+

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS TAGS</title>
+    <link rel="stylesheet" href="EXTERNAL_CSS.css" />
+    <style>
+    
+        /* APPLIES TO ALL DIV TAGS HAVE THE LEAST PRIORITY*/
+        div{
+            background-color: beige;
+        }
+
+        /* APPLIES TO THE WHOLE WEB PAGE*/
+        *{
+            background-color: violet;
+        }
+
+        /* APPLIES TO THE SPECIFIC CLASS NAME */
+        .demo-div{
+            background-color: aqua;
+        }
+
+        /* APPLIES TO THE SPECIFIC DIV ID */
+        #demo-div-id1{
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <!-- INLINE CSS -->
+    <div style="background-color: red;">
+        DIV 1
+    </div>
+    <div> DIV 2</div>
+    <div class="demo-div" > this is a class_name div multiple class can have the same name</div>
+    <div id="demo-div-id1">this is a id specific div every div has a unique id</div>
+    <div id="demo-div-id2"> this is demo div for external css</div>
+</body>
+</html>

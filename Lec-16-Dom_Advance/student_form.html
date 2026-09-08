@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>student form</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            padding: 24px;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #1f2937;
+        }
+
+        body > div {
+            width: min(100%, 420px);
+            padding: 28px;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(31, 41, 55, 0.12);
+        }
+
+        h2 {
+            margin: 0 0 24px;
+            text-align: center;
+        }
+
+        #registration-form {
+            display: grid;
+            gap: 16px;
+        }
+
+        label {
+            display: grid;
+            gap: 7px;
+            text-transform: capitalize;
+            font-weight: 600;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font: inherit;
+        }
+
+        input:focus {
+            outline: 2px solid #93c5fd;
+            border-color: #2563eb;
+        }
+
+        label:has(input[type="checkbox"]) {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            font-weight: normal;
+        }
+
+        button {
+            padding: 11px 16px;
+            border: 0;
+            border-radius: 6px;
+            background: #2563eb;
+            color: white;
+            cursor: pointer;
+            font: inherit;
+            font-weight: 600;
+            text-transform: capitalize;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>Student registration form</h2>
+        <form id="registration-form">
+            <label for="name">
+                name: <input id="name" name="student-name" type="text">
+            </label>
+            <label for="age">
+                age: <input id="age" name="student-age" type="number">
+            </label>
+            <label for="terms">
+                 <input  id="terms" name="terms" type="checkbox">
+                 i accept the terms and conditions
+            </label>
+            <button id="submit-button" type="submit">submit</button>
+            <button id="reset-button" type="reset">reset</button>
+        </form>
+    </div>
+    <div id="response"></div>
+</body>
+<script>
+    const nameinput = document.getElementById("name");
+    const ageinput = document.getElementById("age")
+    const termsinput = document.getElementById("terms")
+    const submitbtn = document.getElementById("submit-button")
+    const resultdiv = document.getElementById("response")
+    const formel = document.getElementById("registration-form")
+    const resetbutton = document.getElementById("reset-button");
+
+    resetbutton.addEventListener("click",() =>{
+        formel.reset();// reset the form
+    })
+
+    formel.addEventListener("submit",(event) =>{
+        event.preventDefault(); // prevents from refreshing the page
+        resultdiv.style.display = "block";
+        const name = nameinput.value
+        if(!name){
+            resultdiv.textContent = "please enter a valid name";
+            return;
+        }
+        const age = ageinput.value
+        if(!age || age < 0 || age > 100){
+            resultdiv.textContent = "please enter a valid age";
+            return;
+        }
+        const istermchecked = termsinput.checked;
+        const terms = istermchecked ? "accepted" : "not accepted"
+
+        resultdiv.textContent = `hey ${name},your age is ${age}, you have ${terms} the terms`;
+    });
+</script>
+</html>

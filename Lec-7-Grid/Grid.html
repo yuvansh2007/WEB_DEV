@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid</title>
+    <style>
+      .container {
+        display: grid;
+        height: 300px;
+        width: 300px;
+        background-color: antiquewhite;
+        border: solid 1px black;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-areas:
+          "div1 div1 div1 div1"
+          "div2 div3 div3 div5"
+          "div2 div3 div3 div5"
+          "div4 div4 div4 div4";
+      }
+      .d1 {
+        /* grid-column: 1/5; */
+        background-color: aqua;
+        border: solid 1px black;
+        grid-area: div1;
+      }
+      .d2 {
+        /* grid-row: 2/4; */
+        background-color: red;
+        border: solid 1px black;
+        grid-area: div2;
+      }
+      .d3 {
+        /* grid-column: 2/4;
+            grid-row: 2/4; */
+        background-color: aquamarine;
+        border: solid 1px black;
+        grid-area: div3;
+      }
+      .d4 {
+        border: solid 1px black;
+        background-color: green;
+        /* grid-row: 4/5;
+            grid-column: 1/5; */
+        grid-area: div4;
+      }
+      .d5 {
+        background-color: pink;
+        /* grid-row: 2/4; */
+        border: solid 1px black;
+        grid-area: div5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="d1">1</div>
+      <div class="d2">2</div>
+      <div class="d3">3</div>
+      <div class="d4">4</div>
+      <div class="d5">5</div>
+    </div>
+  </body>
+</html>

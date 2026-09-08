@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Basics</title>
+</head>
+<body>
+    <h1 id="heading">This is a H1 Dom tag</h1>
+    <div class="div-class">This is a div tag</div>
+    <p>This is p1</p>
+    <p>This is p2</p>
+    <p>This is p3</p>
+    <p>This is p4</p>
+
+    <div class="div-class">This is div 1</div>
+    <div class="div-class">This is div 2</div>
+    <div class="div-class">This is div 3</div>
+    <div class="div-class">This is div 4</div>
+</body>
+<script>
+    const headingelement = document.getElementById("heading");// selects element by id and returns 1 id(id is unique)
+    console.log(headingelement);
+
+    const divelement = document.querySelector(".div-class");// selects element by class and returns 1 that matches
+    console.log(divelement);
+
+    const h1element = document.querySelector("#heading");// selects element by id and returns 1 id(id is unique)
+    console.log(h1element);
+
+    const paragraphs = document.querySelectorAll("p");// selects element by the tag it follows return all that matches
+    console.log(paragraphs);
+
+    const divs = document.querySelectorAll(".div-class");//selects element my class using the tag it follows and returns all
+    console.log(divs);
+</script>
+</html>

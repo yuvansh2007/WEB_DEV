@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Listener</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        #click-me{
+            background-color: blue;
+            color: aliceblue;
+            height: 20px;
+            width: 100px;
+        }
+        .display-click{
+            display: none;
+        }
+        #hover-me{
+            height: 30px;
+            width: 100px;
+            background-color: red;
+        }
+        .is-hovered{
+            background-color: green !important; 
+        }
+    </style>
+</head>
+<body>
+    <input type="checkbox" id="click-me">Show Text</input>
+    <div class="display-click">hurray button is clicked</div>
+    <input type="text"  id="input-text" placeholder="add text here"/>
+    <div id="show-text">show your text here-></div>
+    <button id="hover-me">Hover me</button>
+</body>
+<script>
+    const clickmebtn = document.getElementById("click-me");
+    const displayclickelement = document.querySelector(".display-click");
+    clickmebtn.addEventListener("click",(event) =>{
+        if(event.target.checked){
+            displayclickelement.style.display = "block"
+        }else{
+            displayclickelement.style.display = "none";
+        }
+    });
+
+    const textinput = document.getElementById("input-text");
+    const showTextElement = document.getElementById("show-text");
+    textinput.addEventListener("input",(event)=>{
+        showTextElement.textContent = "show your text here->";
+        showTextElement.textContent += event.target.value;
+    })
+
+    const hoverbtn = document.getElementById("hover-me");
+    hoverbtn.addEventListener("mouseenter",()=>{
+        hoverbtn.classList.add("is-hovered");
+    })
+    hoverbtn.addEventListener("mouseleave",()=>{
+        hoverbtn.classList.remove("is-hovered");
+    })
+</script>
+</html>

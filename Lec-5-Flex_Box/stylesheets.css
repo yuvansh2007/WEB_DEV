@@ -1,0 +1,52 @@
+.div1{
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    width: 200px;  
+    border: solid 2px black; 
+    border-radius: 5px;
+    background-color: #2F2F2F;
+}
+.image{
+    width: 180px;
+    height: 130px;
+    border-radius: 5px;
+}
+.heading{
+    font-size: medium;
+    color: #F6F930;
+    margin: 0;
+    margin-top: 3px;
+}
+.para{
+    margin-top: 3px;
+    margin-bottom: 3px;
+    text-align: center;
+    color: #D2F898;
+}
+.button{
+    margin-top: 5px;
+    background-color: #000000;
+    color: #D2F898;
+    /* transition: background-color ease-out 1s; */
+    /* transition: background-color ease-in-out 1s; */
+
+    /* This transiton can also be used here but when we hover then it sees color change then goes to this transition and puts the animation but 
+    it does not make sense to put it here because animation is produce when we use the hover class */
+}
+.button:hover{
+    background-color:aqua; 
+    /* transition: background-color ease-in 1s; */
+    transition: background-color ease-out 1s;
+    
+    /* both work the same */
+}
+#outer-div{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    justify-content:space-evenly;
+}

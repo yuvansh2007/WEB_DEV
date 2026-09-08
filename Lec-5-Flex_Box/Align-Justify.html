@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex-Box</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    div{
+        border: solid 5px black;
+    }
+    #outer-div{
+        background-color: antiquewhite;
+        height: 100vh;
+
+        display: flex;
+        flex-direction: row;
+        /* Justify content works along the axis */
+        
+        justify-content: center;
+
+        /* flex-direction: column; */
+        /* justify-content: flex-start; */
+        /* justify-content: flex-end; */
+
+        /* justify-content: space-around; */
+        /* justify-content: space-between; */
+        /* justify-content: space-evenly;  */
+
+        /* Align content works across the axis */
+        align-items: center;
+    }
+    .inner-div{
+        height: 100px;
+        width: 100px;
+        margin: 20px;
+        background-color: aqua;
+    }
+
+</style>
+<body>
+    <div id="outer-div">
+        <div class="inner-div" id="Div-1">
+            DIV 1
+        </div>
+        <div class="inner-div" id="Div-2">
+            DIV 2
+        </div>
+        <div class="inner-div" id="Div-3">
+            DIV 3
+        </div>
+    </div>
+</body>
+</html>

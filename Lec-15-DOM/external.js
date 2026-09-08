@@ -1,0 +1,1 @@
+console.log("this is usage of a external js file by script tag");
