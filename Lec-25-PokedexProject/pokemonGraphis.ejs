@@ -1,19 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Pokemon List</h1>
-    <h2> Total number of pokemons : <%= count %></h2>
-    <ul><% pokemons.forEach((pokemon) =>{%>
-    <li> <%= pokemon.name %></li>
-<% }); %>
-</ul>
-<% if (next) { %>
-    <a href= <%= next
-}
-</body>
+    <h3>Total Number of pokemons : <%= count %></h3>
+    <ul><% pokemons.forEach((pokemon)=> { %>
+      <li><%= pokemon.name %></li>
+      <% }); %>
+    </ul>
+
+    <% if(previous) { %>
+      <a href=<%= previous %>>
+        <button <%= previous === null ? 'disabled' : '' %>>previous</button>
+      </a>
+    <%}%> 
+
+    <% if(next) { %>
+      <a href=<%= next %>>
+        <button <%= next === null ? 'disabled' : '' %>>next</button>
+      </a>
+    <%}%> 
+
+
+
+  </body>
 </html>

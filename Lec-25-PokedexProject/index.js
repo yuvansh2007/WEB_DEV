@@ -1,38 +1,46 @@
+require("dotenv").config();
+
 const express = require("express");
-const axios = require("axios");
-const { getPokemon, getPokemonList } = require("./pokemonController");
+
+const { getPokemonList, getPokemon } = require("./pokemon.controller");
 const app = express();
-app.set("veiw engine","ejs");
+
+app.set("view engine", "ejs");
 
 app.get("/pokemon", async (req, res) => {
   try {
     const offset = req.query.offset || 0;
-    const limit = req.query.limit || 20;
+    const limit = req.query.limit || 10;
 
     const id = req.query.id || "";
+
     let responseData = null;
+
     if (id) {
       responseData = await getPokemon(id);
     } else {
       responseData = await getPokemonList(offset, limit);
     }
 
-    app.render({
-        
-    })
-    
+    res.render("pokemon", {
+      pokemons: responseData.results,
+      count: responseData.count,
+      next: responseData.next,
+      previous: responseData.previous,
+    });
+
     // res.json({
-    //   message: "success",
+    //   message: "Success",
     //   data: responseData,
     // });
   } catch (error) {
-    console.log("Failed", error);
+    console.log("Failed Getting Pokemon", error);
     res.json({
-      message: "failed",
+      message: "Failed",
     });
   }
 });
 
-app.listen(3000, () => {
-  console.log("listening on http://localhost:3000/");
+app.listen(process.env.PORT, () => {
+  console.log(`Listening on http://localhost:${process.env.PORT}/`);
 });
